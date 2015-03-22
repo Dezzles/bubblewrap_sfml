@@ -2,8 +2,9 @@
 #include "Bubblewrap/Render/SfmlVertices.hpp"
 #include "Bubblewrap/Base/Base.hpp"
 #include "Bubblewrap/Render/Types.hpp"
-#include "Bubblewrap/Math/Vector.hpp"
+#include "Bubblewrap/Math/Vector2.hpp"
 #include "SFML/Graphics.hpp"
+
 namespace Bubblewrap
 {
 	namespace Render
@@ -37,7 +38,7 @@ namespace Bubblewrap
 			for ( int Idx = 0; Idx < uCount; ++Idx )
 			{
 				Vertices_[ Idx ].Colour_ = Colour( Params[ "vertices" ][ Idx ][ "colour" ].asString() );
-				Vertices_[ Idx ].Position_ = Math::Vector2f( Params[ "vertices" ][ Idx ][ "position" ].asString() );
+				Vertices_[ Idx ].Position_ = Math::Vector3f( Params[ "vertices" ][ Idx ][ "position" ].asString() );
 				Vertices_[ Idx ].Colour_ = Colour( Params[ "vertices" ][ Idx ][ "colour" ].asString() );
 			}
 		}
