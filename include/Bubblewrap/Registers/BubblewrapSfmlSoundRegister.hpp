@@ -1,11 +1,11 @@
-#ifndef BUBBLEWRAPPHYSICSREGISTER_HPP
-#define BUBBLEWRAPPHYSICSREGISTER_HPP
+#ifndef BUBBLEWRAP_SFML_SOUND_REGISTER_HPP
+#define BUBBLEWRAP_SFML_SOUND_REGISTER_HPP
 
 namespace Bubblewrap
 {
 	namespace Registers
 	{
-		class GraphicsRegister
+		class SfmlSoundRegister
 		{
 		public:
 			static void Register(void* ObjectRegister);

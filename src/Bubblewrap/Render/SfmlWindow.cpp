@@ -42,6 +42,7 @@ namespace Bubblewrap
 
 		void SfmlWindow::Display()
 		{
+			Window::Display();
 			sfWindow_->display();
 		}
 

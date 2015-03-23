@@ -27,6 +27,8 @@ namespace Bubblewrap
 			virtual void Update( float dt );
 			virtual void OnAttach();
 
+			virtual void Draw();
+
 		private:
 
 			sf::RectangleShape Shape_;

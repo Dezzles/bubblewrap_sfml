@@ -13,6 +13,7 @@ namespace Bubblewrap
 
 		void SfmlSprite::Initialise( Json::Value Params )
 		{
+			Sprite::Initialise( Params );
 			SetWindow( Params[ "window" ].asString() );
 			SetSize( Math::Vector2f( Params[ "size" ][ "x" ].asFloat(), Params[ "size" ][ "y" ].asFloat() ) );
 			TextureName_ = "";
@@ -47,6 +48,7 @@ namespace Bubblewrap
 
 		void SfmlSprite::Update( float dt )
 		{
+			Sprite::Update( dt );
 			Math::Vector2f Position = GetParentEntity()->WorldPosition();
 			if ( IsDirty_ )
 			{
@@ -58,6 +60,10 @@ namespace Bubblewrap
 
 			}
 			Shape_.setPosition(Position.X(), Position.Y());
+		}
+
+		void SfmlSprite::Draw()
+		{
 			Window_->GetWindow<sf::RenderWindow>()->draw( Shape_ );
 		}
 

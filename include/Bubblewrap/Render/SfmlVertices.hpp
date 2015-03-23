@@ -30,6 +30,7 @@ namespace Bubblewrap
 			void SetVertex( unsigned int Idx, Vertex V );
 			void Refresh();
 			void SetPrimitiveType( Primitives PrimitiveType );
+			void Draw();
 		protected:
 
 			Vertex* Vertices_;

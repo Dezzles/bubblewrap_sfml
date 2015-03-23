@@ -63,14 +63,18 @@ namespace Bubblewrap
 
 		void SfmlVertices::Update( float dt )
 		{
+			Vertices::Update( dt );
 			assert( !Dirty_ );
 			if ( ( Window_ == nullptr ) && ( WindowName_ != "" ) )
 			{
 				Window_ = GetManager().GetWindowManager().GetItem( WindowName_ );
 			}
-			if ( Window_ == nullptr )
-				return;
+			Refresh();
 
+		}
+
+		void SfmlVertices::Draw()
+		{
 			sf::RenderWindow* rw = Window_->GetWindow<sf::RenderWindow>();
 			sf::PrimitiveType PrimitiveType;
 			switch ( PrimitiveType_ )
@@ -98,6 +102,7 @@ namespace Bubblewrap
 				break;
 			}
 			rw->draw( SFVertices_, VertexCount_, PrimitiveType );
+
 		}
 
 		void SfmlVertices::SetPrimitiveType( Primitives PrimitiveType )

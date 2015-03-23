@@ -1,4 +1,4 @@
-#include "Bubblewrap/Registers/BubblewrapGraphicsRegister.hpp"
+#include "Bubblewrap/Registers/BubblewrapSfmlGraphicsRegister.hpp"
 #include "Bubblewrap/Base/ObjectRegister.hpp"
 #include "Bubblewrap/Base/SfmlClock.hpp"
 #include "Bubblewrap/Managers/Managers.hpp"
@@ -10,7 +10,7 @@ namespace Bubblewrap
 {
 	namespace Registers
 	{
-		void GraphicsRegister::Register( void* ObjectRegister )
+		void SfmlGraphicsRegister::Register( void* ObjectRegister )
 		{
 			Base::ObjectRegister* Register = (Base::ObjectRegister*) ObjectRegister;
 
