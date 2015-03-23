@@ -33,16 +33,10 @@ namespace Bubblewrap
 			void Draw();
 		protected:
 
-			Vertex* Vertices_;
 			sf::Vertex* SFVertices_;
 
-			unsigned int VertexCount_;
-			unsigned int ReservedCount_;
 			unsigned int SFReservedCount_;
 
-			Primitives PrimitiveType_;
-
-			bool Dirty_;
 		};
 	}
 }

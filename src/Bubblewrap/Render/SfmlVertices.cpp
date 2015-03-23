@@ -31,7 +31,7 @@ namespace Bubblewrap
 		{
 			Vertices::Initialise( Params );
 
-			SetPrimitiveType( Converts::PrimitiveFromString( Params[ "primitivetype" ].asString() ) );
+			/*SetPrimitiveType( Converts::PrimitiveFromString( Params[ "primitiveType" ].asString() ) );
 			Reserve( Params[ "vertices" ].size() );
 			int uCount = Params[ "vertices" ].size();
 			VertexCount_ = uCount;
@@ -40,19 +40,13 @@ namespace Bubblewrap
 				Vertices_[ Idx ].Colour_ = Colour( Params[ "vertices" ][ Idx ][ "colour" ].asString() );
 				Vertices_[ Idx ].Position_ = Math::Vector3f( Params[ "vertices" ][ Idx ][ "position" ].asString() );
 				Vertices_[ Idx ].Colour_ = Colour( Params[ "vertices" ][ Idx ][ "colour" ].asString() );
-			}
+			}/**/
 		}
 
 
 		void SfmlVertices::Copy( SfmlVertices* Target, SfmlVertices* Base )
 		{
-			Drawable::Copy( Target, Base );
-			Target->Reserve( Base->VertexCount_ );
-			memcpy( Target->Vertices_, Base->Vertices_, Base->VertexCount_ * sizeof( Vertex ) );
-
-			Target->PrimitiveType_ = Base->PrimitiveType_;
-			Target->ReservedCount_ = Base->VertexCount_;
-			Target->VertexCount_ = Base->VertexCount_;
+			Vertices::Copy( Target, Base );
 			Target->Refresh();
 		}
 
