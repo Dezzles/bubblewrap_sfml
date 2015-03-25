@@ -99,39 +99,6 @@ namespace Bubblewrap
 
 		}
 
-		void SfmlVertices::SetPrimitiveType( Primitives PrimitiveType )
-		{
-			PrimitiveType_ = PrimitiveType;
-		}
-
-		void SfmlVertices::AddVertex( Vertex V )
-		{
-			if ( VertexCount_ == ReservedCount_ )
-			{
-				Reserve( 1 );
-			}
-			Vertices_[ VertexCount_ ] = V;
-			++VertexCount_;
-			Dirty_ = true;
-		}
-		void SfmlVertices::Reserve( unsigned int Amount )
-		{
-			int CurrentCount = ReservedCount_;
-			int NewCount = ReservedCount_ + Amount;
-			Vertex* newMem = new Vertex[ NewCount ];
-			memset( newMem, 0, NewCount * sizeof( Vertex ) );
-			memcpy( newMem, Vertices_, CurrentCount * sizeof( Vertex ) );
-			delete Vertices_;
-			Vertices_ = newMem;
-			ReservedCount_ = NewCount;
-		}
-		void SfmlVertices::SetVertex( unsigned int Idx, Vertex V )
-		{
-			assert( Idx < VertexCount_ );
-			Vertices_[ Idx ] = V;
-			Dirty_ = true;
-		}
-
 		void SfmlVertices::Refresh()
 		{
 			if ( SFReservedCount_ < VertexCount_ )

@@ -25,11 +25,7 @@ namespace Bubblewrap
 			virtual void Update( float dt );
 			virtual void OnAttach();
 
-			void AddVertex( Vertex V );
-			void Reserve( unsigned int Amount );
-			void SetVertex( unsigned int Idx, Vertex V );
 			void Refresh();
-			void SetPrimitiveType( Primitives PrimitiveType );
 			void Draw();
 		protected:
 

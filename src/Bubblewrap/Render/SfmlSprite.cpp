@@ -2,6 +2,7 @@
 #include "Bubblewrap/Render/SfmlTexture.hpp"
 #include "Bubblewrap/Base/Entity.hpp"
 #include "Bubblewrap/Base/Base.hpp"
+#include "Bubblewrap/Base/ObjectRegister.hpp"
 namespace Bubblewrap
 {
 	namespace Render
@@ -36,12 +37,7 @@ namespace Bubblewrap
 		{
 			if ( TextureName_ != "" )
 			{
-				auto values = GetParentEntity()->GetComponentsByType<Texture>( TextureName_ );
-
-				if ( values.size() > 0 )
-				{
-					SetTexture( values[ 0 ] );
-				}
+				Texture_ = dynamic_cast<SfmlTexture*>( GetRegister().GetResource( TextureName_ ) );
 			}
 		}
 

@@ -25,7 +25,6 @@ namespace Bubblewrap
 
 		void SfmlTexture::Update( float dt )
 		{
-
 		}
 
 		sf::Texture* SfmlTexture::GetTexture()
