@@ -40,7 +40,25 @@ namespace Bubblewrap
 				RenderText_.setCharacterSize( CharacterSize_ );
 				IsDirty_ = false;
 			}
-			auto pos = GetParentEntity()->WorldPosition() + GetPosition();
+			Math::Vector2f Modifier;
+			sf::FloatRect Size = RenderText_.getLocalBounds();
+			if ( HorizontalAlignment_ == HAlign::Centre )
+			{
+				Modifier.SetX( -Size.width * 0.5f );
+			}
+			else if ( HorizontalAlignment_ == HAlign::Right )
+			{
+				Modifier.SetX( -Size.width );
+			}
+			if ( VerticalAlignment_ == VAlign::Centre )
+			{
+				Modifier.SetY( -Size.height * 0.5f );
+			}
+			else if ( VerticalAlignment_ == VAlign::Bottom )
+			{
+				Modifier.SetY( -Size.height );
+			}
+			auto pos = GetParentEntity()->WorldPosition() + GetPosition() + Modifier;
 			RenderText_.setPosition( pos.X(), pos.Y() );
 		}
 
