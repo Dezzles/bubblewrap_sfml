@@ -2,9 +2,9 @@
 #include "Bubblewrap/Base/ObjectRegister.hpp"
 #include "Bubblewrap/Base/SfmlClock.hpp"
 #include "Bubblewrap/Managers/Managers.hpp"
-#include "Bubblewrap/Sound/SfmlSound.hpp"
-#include "Bubblewrap/Sound/SfmlSoundBuffer.hpp"
-#include "Bubblewrap/Sound/SfmlMusic.hpp"
+#include "Bubblewrap/Audio/SfmlSound.hpp"
+#include "Bubblewrap/Audio/SfmlSoundBuffer.hpp"
+#include "Bubblewrap/Audio/SfmlMusic.hpp"
 
 namespace Bubblewrap
 {
@@ -14,9 +14,9 @@ namespace Bubblewrap
 		{
 			Base::ObjectRegister* Register = (Base::ObjectRegister*) ObjectRegister;
 
-			Register->RegisterCreator( "Sound", Sound::SfmlSound::Create, Sound::SfmlSound::CreateJson, Sound::SfmlSound::CopyDef, true );
-			Register->RegisterCreator( "SoundBuffer", Sound::SfmlSoundBuffer::Create, Sound::SfmlSoundBuffer::CreateJson, Sound::SfmlSoundBuffer::CopyDef, true );
-			Register->RegisterCreator( "Music", Sound::SfmlMusic::Create, Sound::SfmlMusic::CreateJson, Sound::SfmlMusic::CopyDef, true );
+			Register->RegisterCreator( "Sound", Audio::SfmlSound::Create, Audio::SfmlSound::CreateJson, Audio::SfmlSound::CopyDef, true );
+			Register->RegisterCreator( "SoundBuffer", Audio::SfmlSoundBuffer::Create, Audio::SfmlSoundBuffer::CreateJson, Audio::SfmlSoundBuffer::CopyDef, true );
+			Register->RegisterCreator( "Music", Audio::SfmlMusic::Create, Audio::SfmlMusic::CreateJson, Audio::SfmlMusic::CopyDef, true );
 
 		}
 	}

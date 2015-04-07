@@ -45,7 +45,7 @@ namespace Bubblewrap
 		void SfmlSprite::Update( float dt )
 		{
 			Sprite::Update( dt );
-			Math::Vector2f Position = GetParentEntity()->WorldPosition();
+			Math::Vector3f Position = GetParentEntity()->WorldPosition();
 			if ( IsDirty_ )
 			{
 				Shape_.setFillColor( sf::Color( Colour_.R(), Colour_.G(), Colour_.B(), Colour_.A() ) );

@@ -3,11 +3,11 @@
 
 #include "Bubblewrap/Base/Defines.hpp"
 #include "Bubblewrap/Base/Base.hpp"
-#include "Bubblewrap/Sound/SoundBuffer.hpp"
-
+#include "Bubblewrap/Audio/SoundBuffer.hpp"
+#include "SFML/Audio.hpp"
 namespace Bubblewrap
 {
-	namespace Sound
+	namespace Audio
 	{
 		class SfmlSoundBuffer :
 			public SoundBuffer
@@ -18,7 +18,11 @@ namespace Bubblewrap
 			CREATE_REGISTER( SfmlSoundBuffer );
 
 			void Update( float dt );
+			virtual void OnAttach();
 
+			sf::SoundBuffer* GetBuffer();
+		protected:
+			sf::SoundBuffer Buffer_;
 		};
 
 	}

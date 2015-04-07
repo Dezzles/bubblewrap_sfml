@@ -12,6 +12,13 @@ project "Bubblewrap_SFML"
 	links { 
 		"External_Json"
 	}
+
+	configuration "CrashNBurn"
+	targetdir ( "../build/lib/crashnburn" )
+	defines { "DEBUG", "CRASHNBURN" }
+	flags { "Symbols" }
+
+
 	configuration "Debug"
 		targetdir ( "../build/lib/debug" )
 		defines { "DEBUG" }

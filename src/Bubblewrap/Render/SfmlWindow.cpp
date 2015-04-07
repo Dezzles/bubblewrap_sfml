@@ -57,7 +57,6 @@ namespace Bubblewrap
 				if ( ( event.type == sf::Event::KeyPressed ) )
 				{
 					auto code = Bubblewrap::Events::TranslateKey( event.key.code );
-					printf( "sf::KeyDown\n" );
 					Events::InputData* newEvent = new Events::InputData();
 					newEvent->InputType_ = Events::InputData::InputType::KeyDown;
 					newEvent->Key_ = Bubblewrap::Events::TranslateKey( event.key.code );
@@ -70,7 +69,6 @@ namespace Bubblewrap
 				else if ( ( event.type == sf::Event::KeyReleased ) )
 				{
 					auto code = Bubblewrap::Events::TranslateKey( event.key.code );
-					printf( "sf::KeyUp\n" );
 					Events::InputData* newEvent = new Events::InputData();
 					newEvent->InputType_ = Events::InputData::InputType::KeyUp;
 					newEvent->Key_ = Bubblewrap::Events::TranslateKey( event.key.code );

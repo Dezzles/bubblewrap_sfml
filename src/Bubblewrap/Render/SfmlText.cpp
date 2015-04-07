@@ -58,7 +58,7 @@ namespace Bubblewrap
 			{
 				Modifier.SetY( -Size.height );
 			}
-			auto pos = GetParentEntity()->WorldPosition() + GetPosition() + Modifier;
+			auto pos = GetParentEntity()->WorldPosition().XY() + GetPosition() + Modifier;
 			RenderText_.setPosition( pos.X(), pos.Y() );
 		}
 

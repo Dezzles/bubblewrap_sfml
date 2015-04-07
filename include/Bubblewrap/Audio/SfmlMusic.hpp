@@ -3,11 +3,12 @@
 
 #include "Bubblewrap/Base/Defines.hpp"
 #include "Bubblewrap/Base/Base.hpp"
-#include "Bubblewrap/Sound/Music.hpp"
+#include "Bubblewrap/Audio/Music.hpp"
+#include "SFML/Audio.hpp"
 
 namespace Bubblewrap
 {
-	namespace Sound
+	namespace Audio
 	{
 		class SfmlMusic :
 			public Music
@@ -15,10 +16,16 @@ namespace Bubblewrap
 		public:
 			SfmlMusic();
 			void Initialise( Json::Value Params );
-			CREATE_REGISTER( SfmlMusic );
+			CREATE_REGISTER_OVERRIDE( SfmlMusic, Music );
 
 			void Update( float dt );
-
+			virtual void OnAttach( );
+			virtual void Play();
+			virtual void Pause();
+			virtual void Stop();
+			virtual Sound::Status GetStatus();
+		private:
+			sf::Music Music_;
 		};
 
 	}
