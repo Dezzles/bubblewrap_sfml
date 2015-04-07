@@ -16,13 +16,13 @@ namespace Bubblewrap
 		{
 			Base::ObjectRegister* Register = (Base::ObjectRegister*) ObjectRegister;
 
-			Register->RegisterCreator( "Clock", Base::SfmlClock::Create, Base::SfmlClock::CreateJson, Base::SfmlClock::CopyDef, true );
-			Register->RegisterCreator( "Sprite", Render::SfmlSprite::Create, Render::SfmlSprite::CreateJson, Render::SfmlSprite::CopyDef, true );
-			Register->RegisterCreator( "Texture", Render::SfmlTexture::Create, Render::SfmlTexture::CreateJson, Render::SfmlTexture::CopyDef, true );
-			Register->RegisterCreator( "Vertices", Render::SfmlVertices::Create, Render::SfmlVertices::CreateJson, Render::SfmlVertices::CopyDef, true );
+			Register->RegisterCreator( "Clock", Base::SfmlClock::Create, Base::SfmlClock::CopyDef, true );
+			Register->RegisterCreator( "Sprite", Render::SfmlSprite::Create, Render::SfmlSprite::CopyDef, true );
+			Register->RegisterCreator( "Texture", Render::SfmlTexture::Create, Render::SfmlTexture::CopyDef, true );
+			Register->RegisterCreator( "Vertices", Render::SfmlVertices::Create, Render::SfmlVertices::CopyDef, true );
 			
-			Register->RegisterCreator( "Font", Render::SfmlFont::Create, Render::SfmlFont::CreateJson, Render::SfmlFont::CopyDef, true );
-			Register->RegisterCreator( "Text", Render::SfmlText::Create, Render::SfmlText::CreateJson, Render::SfmlText::CopyDef, true );
+			Register->RegisterCreator( "Font", Render::SfmlFont::Create, Render::SfmlFont::CopyDef, true );
+			Register->RegisterCreator( "Text", Render::SfmlText::Create, Render::SfmlText::CopyDef, true );
 
 			Register->GetManager()->GetWindowManager().SetCreate(Render::SfmlWindow::Create);
 		}

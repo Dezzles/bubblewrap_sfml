@@ -14,9 +14,9 @@ namespace Bubblewrap
 		{
 			Base::ObjectRegister* Register = (Base::ObjectRegister*) ObjectRegister;
 
-			Register->RegisterCreator( "Sound", Audio::SfmlSound::Create, Audio::SfmlSound::CreateJson, Audio::SfmlSound::CopyDef, true );
-			Register->RegisterCreator( "SoundBuffer", Audio::SfmlSoundBuffer::Create, Audio::SfmlSoundBuffer::CreateJson, Audio::SfmlSoundBuffer::CopyDef, true );
-			Register->RegisterCreator( "Music", Audio::SfmlMusic::Create, Audio::SfmlMusic::CreateJson, Audio::SfmlMusic::CopyDef, true );
+			Register->RegisterCreator( "Sound", Audio::SfmlSound::Create, Audio::SfmlSound::CopyDef, true );
+			Register->RegisterCreator( "SoundBuffer", Audio::SfmlSoundBuffer::Create, Audio::SfmlSoundBuffer::CopyDef, true );
+			Register->RegisterCreator( "Music", Audio::SfmlMusic::Create, Audio::SfmlMusic::CopyDef, true );
 
 		}
 	}
