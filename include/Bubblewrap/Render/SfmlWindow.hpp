@@ -22,9 +22,6 @@ namespace Bubblewrap
 				std::string Name_;
 			};
 
-			SfmlWindow();
-			SfmlWindow( int Width, int Height );
-			SfmlWindow( int Width, int Height, std::string Header );
 			SfmlWindow( Window::WindowSettings Settings );
 
 			void Update( float dt );

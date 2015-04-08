@@ -9,21 +9,8 @@ namespace Bubblewrap
 {
 	namespace Render
 	{
-		SfmlWindow::SfmlWindow()
-		{
-			Window_ = sfWindow_ = new sf::RenderWindow( sf::VideoMode( 800, 600 ), "Bubblewrap Window" );
-		}
-		SfmlWindow::SfmlWindow( int Width, int Height )
-		{
-			Window_ = sfWindow_ = new sf::RenderWindow( sf::VideoMode( Width, Height ), "Bubblewrap Window" );
-		}
-
-		SfmlWindow::SfmlWindow( int Width, int Height, std::string Header )
-		{
-			Window_ = sfWindow_ = new sf::RenderWindow( sf::VideoMode( Width, Height ), Header );
-		}
-
 		SfmlWindow::SfmlWindow( Window::WindowSettings Settings )
+			: Window( Settings )
 		{
 			Window_ = sfWindow_ = new sf::RenderWindow( sf::VideoMode( Settings.Width_, Settings.Height_ ), Settings.Title_ );
 		}
@@ -64,7 +51,7 @@ namespace Bubblewrap
 					newEvent->Control_ = event.key.control;
 					newEvent->Shift_ = event.key.shift;
 					Events::Event evt = Events::Event( Events::EventTypes::Input, newEvent );
-					GetManagers().GetEventManager().SendMessage( evt );
+					GetManagers().GetEventManager().QueueEvent( evt );
 				}
 				else if ( ( event.type == sf::Event::KeyReleased ) )
 				{
@@ -76,7 +63,7 @@ namespace Bubblewrap
 					newEvent->Control_ = event.key.control;
 					newEvent->Shift_ = event.key.shift;
 					Events::Event evt = Events::Event( Events::EventTypes::Input, newEvent );
-					GetManagers().GetEventManager().SendMessage( evt );
+					GetManagers().GetEventManager().QueueEvent( evt );
 				}
 			}
 
