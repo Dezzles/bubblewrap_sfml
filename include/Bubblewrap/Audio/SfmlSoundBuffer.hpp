@@ -9,6 +9,7 @@ namespace Bubblewrap
 {
 	namespace Audio
 	{
+		/*! An implementation of SoundBuffer using SFML's sf::SoundBuffer */
 		class SfmlSoundBuffer :
 			public SoundBuffer
 		{
@@ -20,8 +21,12 @@ namespace Bubblewrap
 			void Update( float dt );
 			virtual void OnAttach();
 
+			/*! Gets the sf::SoundBuffer stored in this instance of SoundBuffer
+			\returns an sf::SoundBuffer object
+			*/
 			sf::SoundBuffer* GetBuffer();
 		protected:
+			/*! Sound buffer used for storing sound data */
 			sf::SoundBuffer Buffer_;
 		};
 

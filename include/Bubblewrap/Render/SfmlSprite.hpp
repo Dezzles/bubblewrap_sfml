@@ -14,7 +14,7 @@ namespace Bubblewrap
 {
 	namespace Render
 	{
-
+		/*! An implementation of Sprite using SFML's sf::Sprite*/
 		class SfmlSprite
 			: public Sprite
 		{

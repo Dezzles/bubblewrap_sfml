@@ -7,6 +7,7 @@ namespace Bubblewrap
 {
 	namespace Base
 	{
+		/*! An implementation of Clock using SFML's sf::Clock*/
 		class SfmlClock
 			: public Clock
 		{
@@ -17,6 +18,7 @@ namespace Bubblewrap
 			Time GetElapsedTime();
 			void Update( float dt );
 
+		private:
 			sf::Clock Clock_;
 		};
 	}

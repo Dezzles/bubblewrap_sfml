@@ -11,6 +11,7 @@ namespace Bubblewrap
 	namespace Render
 	{
 
+		/*! An implementation of Texture using SFML's sf::Texture */
 		class SfmlTexture
 			: public Texture
 		{
@@ -22,6 +23,9 @@ namespace Bubblewrap
 
 			virtual void Update( float dt );
 
+			/*! Gets the currently stored Texture
+			\returns A pointer to an sf::Textre 
+			*/
 			sf::Texture* GetTexture();
 		private:
 

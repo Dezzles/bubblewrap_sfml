@@ -8,6 +8,10 @@ namespace Bubblewrap
 {
 	namespace Events
 	{
+		/*! Translates an sf::Keyboard::Key into a Bubblewrap::Events::Key
+		\param key SFML keycode
+		\returns The corresponding Bubblewrap keycode 
+		*/
 		Key TranslateKey( sf::Keyboard::Key key );
 	}
 

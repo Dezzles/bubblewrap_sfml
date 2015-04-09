@@ -10,6 +10,8 @@ namespace Bubblewrap
 {
 	namespace Audio
 	{
+		/*! A wrapper for SFML Music that overrides Music
+		*/
 		class SfmlMusic :
 			public Music
 		{

@@ -13,6 +13,7 @@ namespace Bubblewrap
 	namespace Render
 	{
 
+		/*! An implementation of Text using SFML's sf::Text */
 		class SfmlText
 			: public Text
 		{
@@ -26,7 +27,7 @@ namespace Bubblewrap
 			virtual void OnAttach();
 
 			virtual void Draw();
-		protected:
+		private:
 			sf::Text RenderText_;
 		};
 	}

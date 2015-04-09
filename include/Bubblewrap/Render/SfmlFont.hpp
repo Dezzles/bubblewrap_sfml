@@ -14,6 +14,8 @@ namespace Bubblewrap
 	namespace Render
 	{
 
+		/*! An implementation of Font using SFML's sf::Font 
+		*/
 		class SfmlFont
 			: public Font
 		{
@@ -25,8 +27,13 @@ namespace Bubblewrap
 
 			virtual void Update( float dt );
 			virtual void OnAttach();
+			/*! Gets the font data currently stored in Font_
+			\return THE sf::Font object stored in this object
+			*/
 			sf::Font& GetSfmlFont();
 		protected:
+			/*! Storage class for the font data
+			*/
 			sf::Font Font_;
 		};
 	}

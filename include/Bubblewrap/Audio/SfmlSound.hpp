@@ -11,6 +11,7 @@ namespace Bubblewrap
 	namespace Audio
 	{
 		class SfmlSoundBuffer;
+		/*! An implementation of Sound using SFML's sf::Sound */
 		class SfmlSound :
 			public Sound
 		{
