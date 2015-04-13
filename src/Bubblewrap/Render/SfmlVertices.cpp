@@ -3,8 +3,9 @@
 #include "Bubblewrap/Base/Base.hpp"
 #include "Bubblewrap/Render/Types.hpp"
 #include "Bubblewrap/Math/Vector2.hpp"
+#include "Bubblewrap/Base/Entity.hpp"
 #include "SFML/Graphics.hpp"
-
+#include "Bubblewrap/Render/SfmlTexture.hpp"
 namespace Bubblewrap
 {
 	namespace Render
@@ -14,9 +15,8 @@ namespace Bubblewrap
 			VertexCount_ = 0;
 			ReservedCount_ = 0;
 			SFReservedCount_ = 0;
-
+			SFTexture_ = nullptr;
 			Vertices_ = new Vertex[ 0 ];
-			SFVertices_ = new sf::Vertex[ 0 ];
 			Dirty_ = false;
 		}
 
@@ -24,25 +24,12 @@ namespace Bubblewrap
 		SfmlVertices::~SfmlVertices()
 		{
 			delete Vertices_;
-			delete SFVertices_;
 		}
 
 		void SfmlVertices::Initialise( Json::Value Params )
 		{
 			Vertices::Initialise( Params );
-
-			/*SetPrimitiveType( Converts::PrimitiveFromString( Params[ "primitiveType" ].asString() ) );
-			Reserve( Params[ "vertices" ].size() );
-			int uCount = Params[ "vertices" ].size();
-			VertexCount_ = uCount;
-			for ( int Idx = 0; Idx < uCount; ++Idx )
-			{
-				Vertices_[ Idx ].Colour_ = Colour( Params[ "vertices" ][ Idx ][ "colour" ].asString() );
-				Vertices_[ Idx ].Position_ = Math::Vector3f( Params[ "vertices" ][ Idx ][ "position" ].asString() );
-				Vertices_[ Idx ].Colour_ = Colour( Params[ "vertices" ][ Idx ][ "colour" ].asString() );
-			}/**/
 		}
-
 
 		void SfmlVertices::Copy( SfmlVertices* Target, SfmlVertices* Base )
 		{
@@ -52,7 +39,7 @@ namespace Bubblewrap
 
 		void SfmlVertices::OnAttach()
 		{
-
+			SFTexture_ = dynamic_cast<SfmlTexture*>( Texture_ );
 		}
 
 		void SfmlVertices::Update( float dt )
@@ -95,23 +82,44 @@ namespace Bubblewrap
 				PrimitiveType = sf::PrimitiveType::TrianglesFan;
 				break;
 			}
-			rw->draw( SFVertices_, VertexCount_, PrimitiveType );
+			
+			sf::Transform transform;
+			auto pos = GetParentEntity()->WorldPosition();
+			transform.translate( pos.X(), pos.Y() );
+			sf::RenderStates states;
+			states.transform = transform;
+			SFVertices_.setPrimitiveType( PrimitiveType );
+			if ( Texture_ != nullptr )
+				states.texture = SFTexture_->GetTexture();/**/
+			rw->draw( SFVertices_, states );
 
 		}
 
 		void SfmlVertices::Refresh()
-		{
-			if ( SFReservedCount_ < VertexCount_ )
+		{ 
+			SFVertices_.clear();
+			SFVertices_.resize( VertexCount_ );
+			float wid = 0;
+			float hei = 0;
+			if ( Texture_ != nullptr )
 			{
-				delete SFVertices_;
-				SFVertices_ = new sf::Vertex[ VertexCount_ ];
-				SFReservedCount_ = VertexCount_;
+				if ( SFTexture_ == nullptr )
+				{
+					SFTexture_ = dynamic_cast< SfmlTexture* >( Texture_ );
+				}
+				if ( SFTexture_ != nullptr )
+				{
+					sf::Vector2u dimensions = SFTexture_->GetTexture()->getSize();
+					wid = SFTexture_->GetTexture()->getSize().x;
+					hei = SFTexture_->GetTexture()->getSize().y;
+				}
 			}
 			for ( unsigned int Idx = 0; Idx < VertexCount_; ++Idx )
 			{
 				SFVertices_[ Idx ].color = sf::Color( Vertices_[ Idx ].Colour_.R(), Vertices_[ Idx ].Colour_.G(), Vertices_[ Idx ].Colour_.B(), Vertices_[ Idx ].Colour_.A() );
 				SFVertices_[ Idx ].position = sf::Vector2f( Vertices_[ Idx ].Position_.X(), Vertices_[ Idx ].Position_.Y() );
-				SFVertices_[ Idx ].texCoords = sf::Vector2f( Vertices_[ Idx ].TexCoords_.X(), Vertices_[ Idx ].TexCoords_.Y() );
+
+				SFVertices_[ Idx ].texCoords = sf::Vector2f( Vertices_[ Idx ].TexCoords_.X() * wid, Vertices_[ Idx ].TexCoords_.Y() * hei );
 			}
 			Dirty_ = false;
 		}

@@ -3,7 +3,6 @@
 #include "Bubblewrap/Base/SfmlClock.hpp"
 #include "Bubblewrap/Managers/Managers.hpp"
 #include "Bubblewrap/Render/SfmlWindow.hpp"
-#include "Bubblewrap/Render/SfmlSprite.hpp"
 #include "Bubblewrap/Render/SfmlTexture.hpp"
 #include "Bubblewrap/Render/SfmlVertices.hpp"
 #include "Bubblewrap/Render/SfmlText.hpp"
@@ -29,7 +28,6 @@ namespace Bubblewrap
 		{
 			Base::ObjectRegister* Register = (Base::ObjectRegister*) ObjectRegister;
 
-			Register->RegisterCreator( "Sprite", Render::SfmlSprite::Create, Render::SfmlSprite::CopyDef, true );
 			Register->RegisterCreator( "Texture", Render::SfmlTexture::Create, Render::SfmlTexture::CopyDef, true );
 			Register->RegisterCreator( "Vertices", Render::SfmlVertices::Create, Render::SfmlVertices::CopyDef, true );
 			

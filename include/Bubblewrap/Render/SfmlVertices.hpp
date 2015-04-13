@@ -11,7 +11,7 @@ namespace Bubblewrap
 {
 	namespace Render
 	{
-
+		class SfmlTexture;
 		/*! An implementation of Vertices using SFML's sf::Vertex*/
 		class SfmlVertices
 			: public Vertices
@@ -30,11 +30,13 @@ namespace Bubblewrap
 			void Draw();
 		protected:
 			/*! A pointer to an array of vertices used to draw*/
-			sf::Vertex* SFVertices_;
+			sf::VertexArray SFVertices_;
 
 			/*! The number of vertices we have currently stored in SFVertices_ */
 			unsigned int SFReservedCount_;
 
+		private:
+			SfmlTexture* SFTexture_;
 		};
 	}
 }
