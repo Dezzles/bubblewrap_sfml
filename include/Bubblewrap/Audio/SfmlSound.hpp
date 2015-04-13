@@ -1,5 +1,5 @@
-#ifndef BUBBLEWRAP_SFML_SOUND_HPP
-#define BUBBLEWRAP_SFML_SOUND_HPP
+#ifndef BUBBLEWRAP_SFML_AUDIO_SFMLSOUND_HPP
+#define BUBBLEWRAP_SFML_AUDIO_SFMLSOUND_HPP
 
 #include "Bubblewrap/Base/Defines.hpp"
 #include "Bubblewrap/Base/Base.hpp"

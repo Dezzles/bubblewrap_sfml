@@ -1,5 +1,5 @@
-#ifndef BUBBLEWRAP_SFML_TEXTURE_H
-#define BUBBLEWRAP_SFML_TEXTURE_H
+#ifndef BUBBLEWRAP_SFML_RENDER_SFMLTEXTURE_HPP
+#define BUBBLEWRAP_SFML_RENDER_SFMLTEXTURE_HPP
 
 #include "SFML/Graphics.hpp"
 #include "Bubblewrap/Base/Defines.hpp"

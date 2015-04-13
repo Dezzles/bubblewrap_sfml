@@ -1,5 +1,5 @@
-#ifndef BUBBLEWRAP_SFML_VERTICES_HPP
-#define BUBBLEWRAP_SFML_VERTICES_HPP
+#ifndef BUBBLEWRAP_SFML_RENDER_SFMLVERTICES_HPP
+#define BUBBLEWRAP_SFML_RENDER_SFMLVERTICES_HPP
 
 #include "Bubblewrap/Base/Defines.hpp"
 #include "Bubblewrap/Render/Vertices.hpp"

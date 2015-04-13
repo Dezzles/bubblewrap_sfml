@@ -1,5 +1,5 @@
-#ifndef BUBBLEWRAP_SFML_CLOCK_HPP
-#define BUBBLEWRAP_SFML_CLOCK_HPP
+#ifndef BUBBLEWRAP_SFML_BASE_SFMLCLOCK_HPP
+#define BUBBLEWRAP_SFML_BASE_SFMLCLOCK_HPP
 
 #include "Bubblewrap/Base/Clock.hpp"
 #include "SFML/System.hpp"

@@ -1,5 +1,5 @@
-#ifndef BUBBLEWRAP_SFML_FONT_HPP
-#define BUBBLEWRAP_SFML_FONT_HPP
+#ifndef BUBBLEWRAP_SFML_RENDER_SFMLFONT_HPP
+#define BUBBLEWRAP_SFML_RENDER_SFMLFONT_HPP
 
 #include "Bubblewrap/Base/Defines.hpp"
 #include "Bubblewrap/Render/Font.hpp"

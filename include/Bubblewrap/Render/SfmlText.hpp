@@ -1,5 +1,5 @@
-#ifndef BUBBLEWRAP_SFML_TEXT_HPP
-#define BUBBLEWRAP_SFML_TEXT_HPP
+#ifndef BUBBLEWRAP_SFML_RENDER_SFMLTEXT_HPP
+#define BUBBLEWRAP_SFML_RENDER_SFMLTEXT_HPP
 
 #include "Bubblewrap/Base/Defines.hpp"
 #include "Bubblewrap/Render/Drawable.hpp"

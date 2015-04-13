@@ -1,5 +1,5 @@
-#ifndef BUBBLEWRAP_SFML_SPRITE_HPP
-#define BUBBLEWRAP_SFML_SPRITE_HPP
+#ifndef BUBBLEWRAP_SFML_RENDER_SFMLSPRITE_HPP
+#define BUBBLEWRAP_SFML_RENDER_SFMLSPRITE_HPP
 
 #include "SFML/Graphics.hpp"
 #include "Bubblewrap/Base/Defines.hpp"
