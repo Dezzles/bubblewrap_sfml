@@ -57,7 +57,7 @@ namespace Bubblewrap
 		void SfmlVertices::Draw()
 		{
 			sf::RenderWindow* rw = Window_->GetWindow<sf::RenderWindow>();
-			sf::PrimitiveType PrimitiveType;
+			sf::PrimitiveType PrimitiveType = sf::PrimitiveType::Points;
 			switch ( PrimitiveType_ )
 			{
 			case Primitives::Lines:
