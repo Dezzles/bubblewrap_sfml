@@ -7,7 +7,8 @@ project "Bubblewrap_SFML"
 		"./include", 
 		SFML2DIR .. "/include/",
 		"../bubblewrap/External",
-		"../bubblewrap/include/"
+		"../bubblewrap/include/",
+		PHYSFSDIR
 		}
 	links { 
 		"External_Json"

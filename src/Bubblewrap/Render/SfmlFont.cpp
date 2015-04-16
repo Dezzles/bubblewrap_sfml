@@ -1,6 +1,7 @@
 #include "Bubblewrap/Render/SfmlFont.hpp"
 #include "Bubblewrap/Base/Entity.hpp"
 #include "Bubblewrap/Base/Base.hpp"
+#include "Bubblewrap/Base/SfmlPhysFsInputStream.hpp"
 namespace Bubblewrap
 {
 	namespace Render
@@ -12,8 +13,8 @@ namespace Bubblewrap
 		void SfmlFont::Initialise( Json::Value Params )
 		{
 			Font::Initialise( Params );
-
-			Font_.loadFromFile( Params[ "fontFile" ].asString() );
+			Stream_.open( Params[ "fontFile" ].asString().c_str() );
+			Font_.loadFromStream( Stream_ );
 		}
 
 

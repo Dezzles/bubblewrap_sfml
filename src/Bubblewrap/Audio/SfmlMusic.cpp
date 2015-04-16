@@ -39,7 +39,8 @@ namespace Bubblewrap
 
 		void SfmlMusic::OnAttach()
 		{
-			Music_.openFromFile( Filename_ );
+			Stream_.open( Filename_ );
+			Music_.openFromStream( Stream_ );
 			if ( Autoplay_ )
 				Play();
 		}

@@ -5,7 +5,7 @@
 #include "Bubblewrap/Base/Defines.hpp"
 #include "Bubblewrap/Base/Component.hpp"
 #include "Bubblewrap/Render/Texture.hpp"
-
+#include "Bubblewrap/Base/SfmlPhysFsInputStream.hpp"
 namespace Bubblewrap
 {
 	namespace Render
@@ -31,6 +31,7 @@ namespace Bubblewrap
 
 			sf::Texture Texture_;
 
+			Base::SfmlPhysFsInputStream Stream_;
 		};
 	}
 }

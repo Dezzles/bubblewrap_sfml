@@ -110,8 +110,8 @@ namespace Bubblewrap
 				if ( SFTexture_ != nullptr )
 				{
 					sf::Vector2u dimensions = SFTexture_->GetTexture()->getSize();
-					wid = SFTexture_->GetTexture()->getSize().x;
-					hei = SFTexture_->GetTexture()->getSize().y;
+					wid = ( float )SFTexture_->GetTexture()->getSize().x;
+					hei = ( float ) SFTexture_->GetTexture()->getSize().y;
 				}
 			}
 			for ( unsigned int Idx = 0; Idx < VertexCount_; ++Idx )

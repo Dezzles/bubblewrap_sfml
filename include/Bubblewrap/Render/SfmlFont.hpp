@@ -6,6 +6,7 @@
 #include "Bubblewrap/Math/Vector2.hpp"
 #include "Bubblewrap/Render/Colour.hpp"
 #include "Bubblewrap/Render/Window.hpp"
+#include "Bubblewrap/Base/SfmlPhysFsInputStream.hpp"
 
 #include "SFML/Graphics.hpp"
 
@@ -35,6 +36,7 @@ namespace Bubblewrap
 			/*! Storage class for the font data
 			*/
 			sf::Font Font_;
+			Base::SfmlPhysFsInputStream Stream_;
 		};
 	}
 }

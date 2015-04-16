@@ -13,7 +13,8 @@ namespace Bubblewrap
 		void SfmlTexture::Initialise( Json::Value Params )
 		{
 			Texture::Initialise( Params );
-			Texture_.loadFromFile( Params[ "texture" ].asString() );
+			Stream_.open( Params[ "texture" ].asString() );
+			Texture_.loadFromStream( Stream_ );
 			
 		}
 

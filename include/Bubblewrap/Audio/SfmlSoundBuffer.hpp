@@ -5,6 +5,7 @@
 #include "Bubblewrap/Base/Base.hpp"
 #include "Bubblewrap/Audio/SoundBuffer.hpp"
 #include "SFML/Audio.hpp"
+#include "Bubblewrap/Base/SfmlPhysFsInputStream.hpp"
 namespace Bubblewrap
 {
 	namespace Audio
@@ -28,6 +29,7 @@ namespace Bubblewrap
 		protected:
 			/*! Sound buffer used for storing sound data */
 			sf::SoundBuffer Buffer_;
+			Base::SfmlPhysFsInputStream Stream_;
 		};
 
 	}

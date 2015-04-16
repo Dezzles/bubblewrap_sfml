@@ -12,7 +12,8 @@ namespace Bubblewrap
 		void SfmlSoundBuffer::Initialise( Json::Value Params )
 		{
 			SoundBuffer::Initialise( Params );
-			Buffer_.loadFromFile( Filename_ );
+			Stream_.open( Filename_ );
+			Buffer_.loadFromStream( Stream_ );
 		}
 
 		void SfmlSoundBuffer::Copy( SfmlSoundBuffer* Target, SfmlSoundBuffer* Base )

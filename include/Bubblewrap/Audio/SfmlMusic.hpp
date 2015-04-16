@@ -5,6 +5,7 @@
 #include "Bubblewrap/Base/Base.hpp"
 #include "Bubblewrap/Audio/Music.hpp"
 #include "SFML/Audio.hpp"
+#include "Bubblewrap/Base/SfmlPhysFsInputStream.hpp"
 
 namespace Bubblewrap
 {
@@ -28,6 +29,7 @@ namespace Bubblewrap
 			virtual Sound::Status GetStatus();
 		private:
 			sf::Music Music_;
+			Base::SfmlPhysFsInputStream Stream_;
 		};
 
 	}
