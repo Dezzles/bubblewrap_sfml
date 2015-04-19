@@ -13,17 +13,14 @@ namespace Bubblewrap
 		SfmlVertices::SfmlVertices()
 		{
 			VertexCount_ = 0;
-			ReservedCount_ = 0;
 			SFReservedCount_ = 0;
 			SFTexture_ = nullptr;
-			Vertices_ = new Vertex[ 0 ];
 			Dirty_ = false;
 		}
 
 
 		SfmlVertices::~SfmlVertices()
 		{
-			delete Vertices_;
 		}
 
 		void SfmlVertices::Initialise( Json::Value Params )
@@ -39,6 +36,7 @@ namespace Bubblewrap
 
 		void SfmlVertices::OnAttach()
 		{
+			Vertices::OnAttach();
 			SFTexture_ = dynamic_cast<SfmlTexture*>( Texture_ );
 		}
 
@@ -124,4 +122,4 @@ namespace Bubblewrap
 			Dirty_ = false;
 		}
 	}
-}
+}	

@@ -24,7 +24,7 @@ namespace Bubblewrap
 
 		void SfmlWindow::Update( float dt )
 		{
-			sfWindow_->clear();
+			sfWindow_->clear(sf::Color( ClearColour_.R(), ClearColour_.G(), ClearColour_.B() ));
 		}
 
 		void SfmlWindow::Display()

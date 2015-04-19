@@ -10,6 +10,7 @@
 #include "Bubblewrap/Audio/SfmlSound.hpp"
 #include "Bubblewrap/Audio/SfmlSoundBuffer.hpp"
 #include "Bubblewrap/Audio/SfmlMusic.hpp"
+#include "Bubblewrap/Render/SfmlImage.hpp"
 
 namespace Bubblewrap
 {
@@ -33,6 +34,8 @@ namespace Bubblewrap
 			
 			Register->RegisterCreator( "Font", Render::SfmlFont::Create, Render::SfmlFont::CopyDef, true );
 			Register->RegisterCreator( "Text", Render::SfmlText::Create, Render::SfmlText::CopyDef, true );
+
+			Register->RegisterCreator("Image", Render::SfmlImage::Create, Render::SfmlImage::CopyDef, true );
 
 			Register->GetManager()->GetWindowManager().SetCreate(Render::SfmlWindow::Create);
 		}
