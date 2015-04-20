@@ -48,6 +48,8 @@ namespace Bubblewrap
 				SfBuffer_ = dynamic_cast<SfmlSoundBuffer*>( Buffer_ );
 				Sound_.setBuffer( *SfBuffer_->GetBuffer() );
 			}
+			if ( Autoplay_ )
+				Play();
 		}
 
 		void SfmlSound::Play()

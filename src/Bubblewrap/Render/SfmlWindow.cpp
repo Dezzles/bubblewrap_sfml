@@ -1,6 +1,6 @@
 #include "Bubblewrap/Render/SfmlWindow.hpp"
 #include "Bubblewrap/Managers/Managers.hpp"
-
+#include "Bubblewrap/Base/Game.hpp"
 #include "Bubblewrap/Events/Events.hpp"
 #include "Bubblewrap/Events/EventManager.hpp"
 #include "SFML/Graphics.hpp"
@@ -64,6 +64,10 @@ namespace Bubblewrap
 					newEvent->Shift_ = event.key.shift;
 					Events::Event evt = Events::Event( Events::EventTypes::Input, newEvent );
 					GetManagers().GetEventManager().QueueEvent( evt );
+				}
+				else if ( ( event.type == sf::Event::EventType::Closed ) )
+				{
+					GetManagers().GetGame()->Shutdown();
 				}
 			}
 
