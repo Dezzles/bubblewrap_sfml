@@ -1,4 +1,4 @@
-project "Bubblewrap_SFML"
+project "bubblewrap_sfml"
 	kind "staticlib"
 	language "C++"
 	files { "include/**.h", "include/**.hpp", "src/**.cpp" }
