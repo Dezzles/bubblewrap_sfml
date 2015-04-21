@@ -14,6 +14,9 @@ project "Bubblewrap_SFML"
 		"External_Json"
 	}
 
+	configuration "gmake"
+		buildoptions { "-std=c++11" }
+
 	configuration "CrashNBurn"
 	targetdir ( "../build/lib/crashnburn" )
 	defines { "DEBUG", "CRASHNBURN" }
