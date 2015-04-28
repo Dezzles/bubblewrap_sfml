@@ -35,7 +35,10 @@ namespace Bubblewrap
 				Sound_.setVolume( Volume_ * 100.0f );
 			}
 			auto pos = GetParentEntity()->WorldPosition();
-			Sound_.setPosition( pos.X(), pos.Y(), pos.Z() );
+			if ( PositionalSound_ )
+				Sound_.setPosition( pos.X(), pos.Y(), pos.Z() );
+			else 
+				Sound_.setPosition( 0.0f, 0.0f, 0.0f );
 			Offset_ = Sound_.getPlayingOffset().asSeconds();
 
 		}
@@ -48,6 +51,13 @@ namespace Bubblewrap
 				SfBuffer_ = dynamic_cast<SfmlSoundBuffer*>( Buffer_ );
 				Sound_.setBuffer( *SfBuffer_->GetBuffer() );
 			}
+			if ( PositionalSound_ )
+			{
+				auto pos = GetParentEntity()->WorldPosition();
+				Sound_.setPosition( pos.X(), pos.Y(), pos.Z() );
+			}
+			else
+				Sound_.setPosition( 0.0f, 0.0f, 0.0f );
 			if ( Autoplay_ )
 				Play();
 		}
