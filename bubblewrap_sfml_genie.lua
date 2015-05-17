@@ -1,34 +1,21 @@
-project "bubblewrap_sfml"
-	kind "staticlib"
-	language "C++"
-	files { "include/**.h", "include/**.hpp", "src/**.cpp" }
-	location "../build/bubblewrap/"
+PsyProjectEngineLib( "sfml" )
+	files 
+	{ 
+		"include/**.h", 
+		"include/**.hpp", 
+		"src/**.cpp" 
+	}
 	includedirs { 
-		"./include", 
 		SFML2DIR .. "/include/",
+		"./include", 
 		"../bubblewrap/External",
 		"../bubblewrap/include/",
-		PHYSFSDIR
 		}
-	links { 
-		"External_Json"
+	PsyAddEngineLinks {
+		"base"
 	}
-
-	configuration "gmake"
-		buildoptions { "-std=c++11" }
-
-	configuration "CrashNBurn"
-	targetdir ( "../build/lib/crashnburn" )
-	defines { "DEBUG", "CRASHNBURN" }
-	flags { "Symbols" }
-
-
-	configuration "Debug"
-		targetdir ( "../build/lib/debug" )
-		defines { "DEBUG" }
-		flags { "Symbols" }
-
-	configuration "Release"
-		targetdir ( "../build/lib/release" )
-		defines { "NDEBUG" }
-		flags { "Optimize" }
+	
+	PsyAddExternalLinks {
+		"physfs",
+		"json",
+	}

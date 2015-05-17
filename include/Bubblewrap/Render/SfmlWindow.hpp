@@ -32,7 +32,7 @@ namespace Bubblewrap
 			\param Params a pointer to the parameters that should be used to create the window
 			\returns A pointer to a new window
 			*/
-			static Window* Create(void *Params);
+			static Window* Create( void *Params, Managers::Managers* Owner );
 		private:
 
 			sf::RenderWindow* sfWindow_;

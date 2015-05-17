@@ -4,7 +4,7 @@
 #define BUBBLEWRAP_BASE_SFMLPHYSFSINPUTSTREAM_HPP
 
 #include <iostream>
-#include "physfs.h"
+#include "physfs/physfs.h"
 #include <SFML/Graphics.hpp>
 namespace Bubblewrap
 {

@@ -15,7 +15,7 @@ namespace Bubblewrap
 			Window_ = sfWindow_ = new sf::RenderWindow( sf::VideoMode( Settings.Width_, Settings.Height_ ), Settings.Title_ );
 		}
 
-		Window* SfmlWindow::Create( void* Params )
+		Window* SfmlWindow::Create( void* Params, Managers::Managers* Owner )
 		{
 			Window::WindowSettings* Settings = ( Window::WindowSettings* )Params;
 			return ( Window* ) ( new SfmlWindow( *Settings ) );

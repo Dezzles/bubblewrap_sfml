@@ -26,7 +26,7 @@ namespace Bubblewrap
 		Colour SfmlImage::GetColour( int X, int Y )
 		{
 			sf::Vector2u size = LoadedImage_.getSize();
-			if ( ( 0 <= X ) && ( X < size.x ) && ( 0 <= Y ) && ( Y < size.y ) )
+			if ( ( 0 <= X ) && ( X < ( int ) size.x ) && ( 0 <= Y ) && ( Y < ( int ) size.y ) )
 			{
 				sf::Color colour = LoadedImage_.getPixel( X, Y );
 				return Colour( colour.r, colour.g, colour.b, colour.a ); 
