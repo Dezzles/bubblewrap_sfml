@@ -1,3 +1,5 @@
+dofile( "sfml_genie.lua" )
+
 PsyProjectEngineLib( "sfml" )
 	files 
 	{ 
@@ -6,10 +8,10 @@ PsyProjectEngineLib( "sfml" )
 		"src/**.cpp" 
 	}
 	includedirs { 
-		SFML2DIR .. "/include/",
 		"./include", 
 		"../bubblewrap/External",
 		"../bubblewrap/include/",
+		"SFML/include"
 		}
 	PsyAddEngineLinks {
 		"base"
@@ -18,4 +20,5 @@ PsyProjectEngineLib( "sfml" )
 	PsyAddExternalLinks {
 		"physfs",
 		"json",
+		"sfml",
 	}

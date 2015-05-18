@@ -11,7 +11,7 @@ namespace Bubblewrap
 
 		void SfmlClock::Copy( SfmlClock* Target, SfmlClock* Base )
 		{
-
+			Clock::Copy( Target, Base );
 		}
 
 		void SfmlClock::Update( float dt )
