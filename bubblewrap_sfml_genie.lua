@@ -1,6 +1,7 @@
 dofile( "sfml_genie.lua" )
 
 PsyProjectEngineLib( "sfml" )
+	defines { "SFML_STATIC" }
 	files 
 	{ 
 		"include/**.h", 

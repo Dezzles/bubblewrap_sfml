@@ -1,7 +1,7 @@
 table.insert( additionalExternalLibraries, "sfml" )
 
 if PsyProjectExternalLib( "sfml", "C++" ) then
-	defines { "SFML_STATIC" }
+	defines { "SFML_STATIC" , "SFML_SYSTEM_EXPORTS" }
 	configuration "*"
 		kind ( EXTERNAL_PROJECT_KIND )
 		includedirs {
@@ -73,7 +73,7 @@ if PsyProjectExternalLib( "sfml", "C++" ) then
 			"SFML/src/SFML/Network/TcpListener.cpp",
 			"SFML/src/SFML/Network/TcpSocket.cpp",
 			"SFML/src/SFML/Network/UdpSocket.cpp",
-			"SFML/src/SFML/System/InputStream.hpp",
+			"SFML/include/SFML/System/InputStream.hpp",
 			"SFML/src/SFML/System/Clock.cpp",
 			"SFML/src/SFML/System/Err.cpp",
 			"SFML/src/SFML/System/Lock.cpp",
@@ -100,6 +100,8 @@ if PsyProjectExternalLib( "sfml", "C++" ) then
 			"SFML/src/SFML/Window/WindowImpl.cpp",
 		}
 	configuration { "vs*" }
+		libdirs { "SFML/extlibs/libs-msvc/x86" }
+		links { "flac" , "freetype", "jpeg", "ogg", "openal32", "vorbis", "vorbisenc", "vorbisfile", "opengl32" }
 		flags
 		{
 			"Unicode"
